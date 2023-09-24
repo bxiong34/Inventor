@@ -1,17 +1,21 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  var variousPrompts = getPrompt();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 
 //arrays
@@ -23,7 +27,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //variable declaration
-  var passLength = "";
+  var passLength = 8;
   var confirmLowercase;
   var confirmUppercase;
   var confirmNumeric;
@@ -33,17 +37,20 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var password = "";
-// loop to randomly select from arrays
-  for (var i = 0; i < passLength; i++) {
-      var randomIndex = Math.floor(Math.random() * randomArray.length);
-      password = password + randomArray[randomIndex];
-  } return password;
+  // loop to randomly select from arrays
+    for (var i = 0; i < passLength; i++) {
+        var randomIndex = Math.floor(Math.random() * randomArray.length);
+        password = password + randomArray[randomIndex];
+    } return password;
 }
-  
+
+function getPrompt() {
+  passLength = prompt("Enter a password length of 8-128 characters.");
+}
+
 //if password length is not met, user will be prompted again
 if (passLength < 8 || passLength > 128) {
     alert("You have entered an invalid password length.");
-    var passLength = prompt("Enter a password length of 8-128 characters.");
    }
      
   //confirms character type(s) to include in password
@@ -54,7 +61,7 @@ if (passLength < 8 || passLength > 128) {
 
 //if no character type selected, user is re-prompted to confirm character type(s) 
 if (confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecialCharacters === false) {
-  alert("You must choose one of the following character types to include in the password.");
+  alert("You must choose at least one of the following character types to include in the password.");
     var confirmLowercase = confirm("Include a lowercase?");
     var confirmUppercase = confirm("Include an uppercase?");
     var confirmNumeric = confirm("Include numeric?");
@@ -75,5 +82,4 @@ if (confirmLowercase === false && confirmUppercase === false && confirmNumeric =
     if (confirmSpecialCharacters) {
       randomArray = randomArray.concat(specialCharacters);
     };
-
 
