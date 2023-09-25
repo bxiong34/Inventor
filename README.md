@@ -17,9 +17,16 @@ When a user clicks on the "Generate Password" button (please refer to 1.), the f
 Live site: https://bxiong34.github.io/Inventor/
 
 
-1. ![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.14 PM.png>)
-2. ![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.33 PM.png>)
-3. ![Alt text](<Assets/Images/Screenshot 2023-09-25 at 5.18.34 PM.png>)
+1. 
+![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.14 PM.png>)
+
+
+2. 
+![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.33 PM.png>)
+
+
+3. 
+![Alt text](<Assets/Images/Screenshot 2023-09-25 at 5.18.34 PM.png>)
 
 ## Credits
 
