@@ -52,8 +52,13 @@ function newPrompts() {
     alert("You have entered an invalid password length.");
     return false;
   }
-  
-     //if character type(s) is/are confirmed
+
+//if no character type is selected, user must redo
+  if (lowercase === false && uppercase === false && numeric === false && specialCharacters === false) {
+        alert("You must choose at least one of the following character types to include in the password.");
+        return false;
+  }
+     //if character type(s) is/are confirmed, random array is selected in new pass
     if (confirm("Include a lowercase?")) {
       randomArray = randomArray.concat(lowercase);
     }
@@ -67,22 +72,12 @@ function newPrompts() {
       randomArray = randomArray.concat(specialCharacters);
     }
     return true;
-    
-  }
+  };
 
 
 
-  
-  //   var confirmLowercase = confirm("Include a lowercase?");
-  //   var confirmUppercase = confirm("Include an uppercase?");
-  //   var confirmNumeric = confirm("Include numeric?");
-  //   var confirmSpecialCharacters = confirm("Include special characters?");
 
-  //   if (confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecialCharacters === false) {
-  //       alert("You must choose at least one of the following character types to include in the password.");
-  //         return false;
-  //     }
-  //   };
+
 
     
     
