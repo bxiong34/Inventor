@@ -12,13 +12,14 @@ N/A
 
 ## Usage
 
-When a user clicks on the "Generate Password" button, the first prompt will ask a how long they want their password to be. After the the length prompt is answered, a series of prompts will pop up to ask if the user would like to include lowercase letters, uppercase letter, numeric values, and special characters. Once those prompts are answered, a random password will be generated. Please refer to the screenshots below.
+When a user clicks on the "Generate Password" button (please refer to 1.), the first prompt will ask a how long they want their password to be. After the length prompt is answered, a series of prompts will pop up to ask if the user would like to include lowercase letters, uppercase letter, numeric values, and special characters (please refer to 2.). Once those prompts are answered, a random password will be generated. If no character type is selected, a password will not be generated (please refer to 3.). Please refer to the screenshots below.
 
 Live site: https://bxiong34.github.io/Inventor/
 
-![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.14 PM.png>)
-![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.33 PM.png>)
 
+1. ![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.14 PM.png>)
+2. ![Alt text](<Assets/Images/Screenshot 2023-09-24 at 7.40.33 PM.png>)
+3. ![Alt text](<Assets/Images/Screenshot 2023-09-25 at 5.18.34 PM.png>)
 
 ## Credits
 
