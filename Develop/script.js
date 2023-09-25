@@ -30,13 +30,7 @@ function writePassword() {
   var randomArray = [];
   var password = "";
   var passLength = 8;
-//variable declaration
-  
-  var confirmLowercase;
-  var confirmUppercase;
-  var confirmNumeric;
-  var confirmSpecialCharacters;
-  
+
 
 
 function generatePassword() {
@@ -73,6 +67,7 @@ if (passLength < 8 || passLength > 128) {
       randomArray = randomArray.concat(specialCharacters);
     }
     return true;
+    
   }
 
 
