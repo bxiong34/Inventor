@@ -10,7 +10,7 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var variousPrompts = getPrompt();
+  var variousPrompts = Prompts();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -35,51 +35,51 @@ function writePassword() {
   var password = "";
 
 
-function generatePassword() {
-  var password = "";
-  // loop to randomly select from arrays
-    for (var i = 0; i < passLength; i++) {
-        var randomIndex = Math.floor(Math.random() * randomArray.length);
-        password = password + randomArray[randomIndex];
-    } return password;
-}
+// function generatePassword() {
+//   var password = "";
+//   // loop to randomly select from arrays
+//     for (var i = 0; i < passLength; i++) {
+//         var randomIndex = Math.floor(Math.random() * randomArray.length);
+//         password = password + randomArray[randomIndex];
+//     } return password;
+// }
 
-function getPrompt() {
-  passLength = prompt("Enter a password length of 8-128 characters.");
-}
+function Prompts() {
+  randomArray = [];
+  
+  passLength = parseInt(prompt("Enter a password length of 8-128 characters."));
 
 //if password length is not met, user will be prompted again
 if (passLength < 8 || passLength > 128) {
     alert("You have entered an invalid password length.");
+    return false;
    }
-     
-  //confirms character type(s) to include in password
-  var confirmLowercase = confirm("Include a lowercase?");
-  var confirmUppercase = confirm("Include an uppercase?");
-  var confirmNumeric = confirm("Include numeric?");
-  var confirmSpecialCharacters = confirm("Include special characters?");
-
-//if no character type selected, user is re-prompted to confirm character type(s) 
-if (confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecialCharacters === false) {
-  alert("You must choose at least one of the following character types to include in the password.");
-    var confirmLowercase = confirm("Include a lowercase?");
-    var confirmUppercase = confirm("Include an uppercase?");
-    var confirmNumeric = confirm("Include numeric?");
-    var confirmSpecialCharacters = confirm("Include special characters?");
-};
-
-     
-//if character type(s) is/are confirmed
-    if (confirmLowercase) {
+  
+     //if character type(s) is/are confirmed
+    if (confirm("Include a lowercase?")); {
       randomArray = randomArray.concat(lowercase);
     }
-    if (confirmUppercase) {
+    if (confirm("Include an uppercase?")); {
       randomArray = randomArray.concat(uppercase);
     }
-    if (confirmNumeric) {
+    if (confirm("Include numeric?")); {
       randomArray = randomArray.concat(numeric);
     }
-    if (confirmSpecialCharacters) {
+    if (confirm("Include special characters?")); {
       randomArray = randomArray.concat(specialCharacters);
-    };
+    }
+    return true;
+  }
+
+
+// //if no character type selected, user is re-prompted to confirm character type(s) 
+// if (confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecialCharacters === false) {
+//   alert("You must choose at least one of the following character types to include in the password.");
+//     var confirmLowercase = confirm("Include a lowercase?");
+//     var confirmUppercase = confirm("Include an uppercase?");
+//     var confirmNumeric = confirm("Include numeric?");
+//     var confirmSpecialCharacters = confirm("Include special characters?");
+// };
+
+     
 
