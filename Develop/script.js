@@ -9,44 +9,48 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  
   var variousPrompts = Prompts();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+    if (variousPrompts) {
+      var newPass = generatePassword();
+      passwordText.value = newPass; 
+    } else {
+      passwordText.value = "";
+    }
 
 }
 
-
-//arrays
+//variables
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", ",", "<", ".", ">", "?", "/"];
   var numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   var randomArray = [];
-
-
-//variable declaration
+  var password = "";
   var passLength = 8;
+//variable declaration
+  
   var confirmLowercase;
   var confirmUppercase;
   var confirmNumeric;
   var confirmSpecialCharacters;
+  
+
+
+function generatePassword() {
   var password = "";
-
-
-// function generatePassword() {
-//   var password = "";
-//   // loop to randomly select from arrays
-//     for (var i = 0; i < passLength; i++) {
-//         var randomIndex = Math.floor(Math.random() * randomArray.length);
-//         password = password + randomArray[randomIndex];
-//     } return password;
-// }
+  // loop to randomly select from arrays
+    for (var i = 0; i < passLength; i++) {
+        var randomIndex = Math.floor(Math.random() * randomArray.length);
+        password = password + randomArray[randomIndex];
+    } return password;
+}
 
 function Prompts() {
   randomArray = [];
-  
+
   passLength = parseInt(prompt("Enter a password length of 8-128 characters."));
 
 //if password length is not met, user will be prompted again
